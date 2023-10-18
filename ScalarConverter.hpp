@@ -4,6 +4,9 @@
 # include <iostream>
 # include <string>
 # include <cstdlib>
+# include <limits.h>
+# include <iomanip>
+# include <cmath>
 
 class ScalarConverter
 {
