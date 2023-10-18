@@ -6,15 +6,13 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:57:58 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/18 15:27:29 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:17:38 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-ScalarConverter::ScalarConverter() {
-    std::cout << "ScalarConverter constructor called" << std::endl;
-}
+ScalarConverter::ScalarConverter() {}
 
 void    displayChar(double r)
 {
@@ -24,7 +22,7 @@ void    displayChar(double r)
         return;
     }
     else if (r >= 33 && r <= 126)
-        std::cout << "char: " << static_cast<char>(r) << std::endl;
+        std::cout << "char: '" << static_cast<char>(r) << "'" << std::endl;
     else
         std::cout << "char: impossible" << std::endl;
     
@@ -41,11 +39,15 @@ void    displayInt(double r)
 void    displayFloat(double r)
 {
     if (r - static_cast<int>(r) > 0 || r - static_cast<int>(r) < 0)
-        std::cout << "float: "  << static_cast<float>(r) << "f" << std::endl;
+        std::cout << "float: "  << r << "f" << std::endl;
     else
         std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(r) << "f" << std::endl;
 }
 
+void    displayDouble(double r)
+{
+    std::cout << "float: "  << static_cast<float>(r) << std::endl;
+}
 
 void    ScalarConverter::convert(std::string &literal)
 {
@@ -56,9 +58,8 @@ void    ScalarConverter::convert(std::string &literal)
     displayChar(result);
     displayInt(result);
     displayFloat(result);
+    displayDouble(result);
 }
 
 
-ScalarConverter::~ScalarConverter() {
-    std::cout << "ScalarConverter destructor called" << std::endl;
-}
+ScalarConverter::~ScalarConverter() {}
