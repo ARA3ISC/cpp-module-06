@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:57:58 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/18 16:17:38 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:35:14 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void    displayFloat(double r)
 
 void    displayDouble(double r)
 {
-    std::cout << "float: "  << static_cast<float>(r) << std::endl;
+    std::cout << "double: "  << static_cast<float>(r) << std::endl;
 }
 
 void    ScalarConverter::convert(std::string &literal)
