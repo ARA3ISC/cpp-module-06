@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:54:25 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/17 17:58:22 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/10/18 17:32:26 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 int main(int argc, char **argv)
 {
+    ScalarConverter sc;
     if (argc == 2)
     {
         std::string str = argv[1];
@@ -22,3 +23,4 @@ int main(int argc, char **argv)
     else
         std::cerr << "Invalid args count!" << std::endl;
 }
+
