@@ -25,7 +25,7 @@ void    displayChar(double r)
         std::cout << "char: '" << static_cast<char>(r) << "'" << std::endl;
     else
         std::cout << "char: impossible" << std::endl;
-    
+
 }
 
 void    displayInt(double r)
@@ -54,9 +54,12 @@ void    ScalarConverter::convert(std::string &literal)
     char *end;
     double result;
 
-    result = std::strtod(literal.c_str(), &end); 
-    
-    displayChar(result);
+    result = std::strtod(literal.c_str(), &end);
+
+    if (result == 0 && strlen(end) == 1)
+		std::cout << "char : "<< end << std::endl;
+	else
+		displayChar(result);
     displayInt(result);
     displayFloat(result);
     displayDouble(result);
