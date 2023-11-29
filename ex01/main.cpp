@@ -15,7 +15,7 @@
 int main()
 {
     Data *d = new Data;
-    uintptr_t result;
+    uintptr_t raw;
 
     // initializing data members
     d->count = 42;
@@ -26,8 +26,8 @@ int main()
     std::cout << "address before serializing : ";
     std::cout << d << std::endl;
     
-    result = Serializer::serialize(d);
-    d = Serializer::deserialize(result); 
+    raw = Serializer::serialize(d);
+    d = Serializer::deserialize(raw); 
     
     std::cout << "address after serializing  : ";
     std::cout << d << std::endl; // must be equal to the original Data address
