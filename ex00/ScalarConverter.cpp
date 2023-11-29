@@ -13,6 +13,9 @@
 #include "ScalarConverter.hpp"
 
 ScalarConverter::ScalarConverter() {}
+ScalarConverter::ScalarConverter(const ScalarConverter& obj) {(void)obj; }
+ScalarConverter& ScalarConverter::operator=(const ScalarConverter& obj){(void)obj;return *this;}
+ScalarConverter::~ScalarConverter() {}
 
 void    displayChar(double r)
 {
@@ -30,6 +33,8 @@ void    displayChar(double r)
 
 void    displayInt(double r)
 {
+    // std::cout << r << std::endl;
+
     if (std::isnan(r) || r > INT_MAX || r < INT_MIN)
         std::cout << "int : impossible" << std::endl;
     else
@@ -56,14 +61,23 @@ void    ScalarConverter::convert(std::string &literal)
 
     result = std::strtod(literal.c_str(), &end);
 
+    if (*end && strlen(end) != 1)
+        throw std::runtime_error("Error");
     if (result == 0 && strlen(end) == 1)
+    {
 		std::cout << "char : "<< end << std::endl;
+		std::cout << "int : "<< static_cast<int>(end[0]) << std::endl;
+		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(end[0]) << "f" << std::endl;
+		std::cout << "double : "<< static_cast<double>(end[0]) << std::endl;
+    }
 	else
+    {
 		displayChar(result);
-    displayInt(result);
-    displayFloat(result);
-    displayDouble(result);
+        displayInt(result);
+        displayFloat(result);
+        displayDouble(result);
+
+    }
 }
 
 
-ScalarConverter::~ScalarConverter() {}

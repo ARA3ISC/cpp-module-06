@@ -14,12 +14,19 @@
 
 int main(int argc, char **argv)
 {
-    if (argc == 2)
+    try
     {
-        std::string str = argv[1];
-        ScalarConverter::convert(str);
+        if (argc == 2)
+        {
+            std::string str = argv[1];
+            ScalarConverter::convert(str);
+        }
+        else
+            std::cerr << "Invalid args count!" << std::endl;
     }
-    else
-        std::cerr << "Invalid args count!" << std::endl;
+    catch (std::exception& e)
+    {
+        std::cerr << e.what() << std::endl;
+    }
 }
 

@@ -7,6 +7,7 @@
 # include <limits.h>
 # include <iomanip>
 # include <cmath>
+# include <exception>
 
 class ScalarConverter
 {
@@ -14,6 +15,8 @@ class ScalarConverter
         ScalarConverter();
         ~ScalarConverter();
     public:
+        ScalarConverter(const ScalarConverter& obj);
+        ScalarConverter& operator=(const ScalarConverter& obj);
         static void convert(std::string &literal);
 };
 
