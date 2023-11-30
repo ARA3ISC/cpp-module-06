@@ -6,7 +6,7 @@
 /*   By: maneddam <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:57:58 by maneddam          #+#    #+#             */
-/*   Updated: 2023/10/18 17:02:15 by maneddam         ###   ########.fr       */
+/*   Updated: 2023/11/30 15:31:02 by maneddam         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ void    displayChar(double r)
 
 void    displayInt(double r)
 {
-    // std::cout << r << std::endl;
-
     if (std::isnan(r) || r > INT_MAX || r < INT_MIN)
         std::cout << "int : impossible" << std::endl;
     else
@@ -65,7 +63,7 @@ void    ScalarConverter::convert(std::string &literal)
         throw std::runtime_error("Error");
     if (result == 0 && strlen(end) == 1)
     {
-		std::cout << "char : "<< end << std::endl;
+		std::cout << "char : '"<< end << "'" << std::endl;
 		std::cout << "int : "<< static_cast<int>(end[0]) << std::endl;
 		std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(end[0]) << "f" << std::endl;
 		std::cout << "double : "<< static_cast<double>(end[0]) << std::endl;
@@ -76,7 +74,6 @@ void    ScalarConverter::convert(std::string &literal)
         displayInt(result);
         displayFloat(result);
         displayDouble(result);
-
     }
 }
 
